@@ -1,0 +1,58 @@
+{
+  "name": "peopletrees",
+  "version": "1.0.0",
+  "description": "Import, build and export organizational charts in a variety of formats.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "webpackbuild": "webpack --config webpack.config.js"
+  },
+  "author": "Daniel Hiltbrand",
+  "license": "ISC",
+  "babel": {
+    "plugins": [
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ],
+    "presets": [
+      "es2015",
+      "react",
+      "stage-3"
+    ]
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "canvas2pdf": "^1.0.3",
+    "papaparse": "^4.3.6",
+    "promise-polyfill": "6.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-localization": "^0.1.3",
+    "react-modal": "^3.1.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.8",
+    "react-scripts": "^1.0.16",
+    "react-select": "^1.0.0-rc.10",
+    "redux": "^3.7.2",
+    "styled-components": "^2.2.3",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "redux-devtools": "^3.4.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1"
+  }
+}
