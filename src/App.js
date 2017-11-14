@@ -6,52 +6,32 @@ import { Route } from 'react-router';
 
 import './App.css';
 
-import AddAPersonModal from './components/AddAPersonModal';
-import GraphPanel from './components/GraphPanel';
-import ExportModal from './components/ExportModal';
-import ImportModal from './components/ImportModal';
-import LocalizedText from './assets/localizedText';
-import LoginModal from './components/LoginModal';
-import MenuBar from './components/MenuBar';
-
-//var appStore = 
+import AddAPersonModal from './components/AddAPersonModal/AddAPersonModal';
+import GraphPanel from './components/GraphPanel/GraphPanel';
+import ExportModal from './components/ExportModal/ExportModal';
+import ImportModal from './components/ImportModal/ImportModal';
+import LocalizedText from './assets/LocalizedText';
+import LoginModal from './components/LoginModal/LoginModal';
+import TopBar from './components/TopBar/TopBar';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    console.dir(props);
-
-    LocalizedText.setLanguage(this.props.lang);
+    //LocalizedText.setLanguage(props.lang);
   }
 
   render() {
     return (
       <div className='peopletrees-app'>
-        <MenuBar />
+        <TopBar />
         <Route path="/addperson" render={()=><AddAPersonModal />} />
         <Route path="/export" render={()=><ExportModal />} />
         <Route path="/import" render={()=><ImportModal />} />
         <GraphPanel />
-        
       </div>
     );
   }
-}
+};
 
-const mapStateToProps = (state) => {
-  return {
-    ...state,
-    lang: state.lang
-  }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;

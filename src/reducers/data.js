@@ -13,7 +13,9 @@ export const lang_codes = {
 export const InitialStateTemplate = {
 	auth: null,
 	lang: 'en',
-	charts: []
+	charts: [],
+	chart: {},
+	importedData: []
 };
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal'
 
-import LocalizedText from '../assets/localizedText';
+import LocalizedText from '../../assets/LocalizedText';
 
 let closeTimeout = 0;
 

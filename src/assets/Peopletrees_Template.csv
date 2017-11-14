@@ -1,3 +1,10 @@
-Given Name,Family Name,Department,Job Title
-Tim,Johnson,Engineering,Software Engineer
-Padme,Lakshmi,Marketing,Associate
+Given Name,Family Name,Department,Job Title,Email Address,Phone Number,Fax Number,IM,IM Type,Reports To
+Tamara,Smith,Leadership,CEO,Tamara.Smith@domain.com,(555) 555 555.0000,(555) 555 555.0001,,,
+Sonia,Lakshmi,Leadership,COO,Sonia.Lakshmi@domain.com,(555) 555 555.0002,(555) 555 555.0003,,,Tamara Smith
+Ramon,Aguilar,Leadership,CTO,Ramon.Aguilar@domain.com,(555) 555 555.0004,(555) 555 555.0005,,,Tamara Smith
+John,Frenke,Marketing,Online Marketing Manager,John.Frenke@domain.com,(555) 555 555.0006,(555) 555 555.0007,,,Sonia Lakshmi
+Karin,Smith,Engineering,Engineering Manager,Karin.Smith@domain.com,(555) 555 555.0008,,,,Ramon Aguilar
+Tomas,Laredo,Engineering,Cloud Architect,Tomas.Laredo@domain.com,,,TLaredo,Slack,Karin Smith
+Arvan,Das,Engineering,Cloud Team Lead,Arvan.Das@domain.com,,,Arvan778,Slack,Karin Smith
+Jennifer,Howell,Engineering,Full Stack Engineer,Jennifer.Howell@domain.com,,,JHowe11,Slack,Karin Smith
+Tobe,Larnier,Marketing,Marketing Metrics,Tobe.Larnier@domain.com,(555) 555 555.0009,(555) 555 555.0010,,,

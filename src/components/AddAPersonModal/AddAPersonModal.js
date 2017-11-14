@@ -3,39 +3,38 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 
-import AppHistory from '../AppHistory';
+import AppHistory from '../../AppHistory';
 
-import LocalizedText from '../assets/localizedText';
+import LocalizedText from '../../assets/LocalizedText';
 
 let closeTimeout = 0;
 
-const ExportModal = ({onForm_Submit, onModal_Close}) => (
+const AddAPersonModal = ({onForm_Submit, onModal_Close}) => (
 	<Modal
 		isOpen={true}
 		onAfterOpen={this.afterOpen}
 		onRequestClose={onModal_Close}
 		closeTimeoutMS={closeTimeout}
-		contentLabel={LocalizedText.EXPORT}
+		contentLabel={LocalizedText.ADD_A_PERSON}
 	>
 		<a href='#' className='icon-close' onClick={onModal_Close} />
-		<h1>{LocalizedText.EXPORT_THE_CHART}</h1>
-		<p>{LocalizedText.MODAL_EXPORT_BLURB}</p>
+		<h1>{LocalizedText.ADD_A_PERSON}</h1>
 		<form>
-			<label htmlFor='fileTypeSelector'>{LocalizedText.FILE_TYPE}</label>
-			<select id='fileTypeSelector' name='fileTypeSelector'>
-				<option value={LocalizedText.PDF}>{LocalizedText.DOT_PDF}</option>
-				<option value={LocalizedText.PNG}>{LocalizedText.DOT_PNG}</option>
-				<option value={LocalizedText.SVG}>{LocalizedText.DOT_SVG}</option>
-			</select>
+			<label htmlFor='givenName'>{LocalizedText.GIVEN_NAME}</label>
+			<input id= 'givenName' name='givenName' type='text' autoFocus></input>
+			<label htmlFor='familyName'>{LocalizedText.FAMILY_NAME}</label>
+			<input id= 'familyName' name='familyName' type='text'></input>
+			<label htmlFor='positionTitle'>{LocalizedText.POSITION_TITLE}</label>
+			<input id= 'positionTitle' name='positionTitle' type='text'></input>
 			<div className='buttons'>
 				<input type='button' className='cancel' onClick={onModal_Close} value={LocalizedText.CANCEL} />
-				<input type='button' className='action' onClick={onForm_Submit} value={LocalizedText.EXPORT} />
+				<input type='button' className='action' onClick={onForm_Submit} value={LocalizedText.ADD} />
 			</div>
 		</form>
 	</Modal>
 );
 
-ExportModal.propTypes = {
+AddAPersonModal.propTypes = {
 	onForm_Submit: PropTypes.func.isRequired,
 	onModal_Close: PropTypes.func.isRequired
 };
@@ -61,4 +60,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ExportModal);
+)(AddAPersonModal);
