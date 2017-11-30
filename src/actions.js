@@ -4,6 +4,7 @@ export const CHANGE_LANG = Symbol('CHANGE_LANG');
 export const CHART_FOCUS = Symbol('CHART_FOCUS');
 export const FILE_IMPORTED = Symbol('FILE_IMPORTED');
 export const FLUSH_IMPORTED_DATA = Symbol('FLUSH_IMPORTED_DATA');
+export const EXPORT_FILE_FORMAT_SELECTED = Symbol('EXPORT_FILE_FORMAT_SELECTED');
 export const RECEIVED_TOKEN = Symbol('RECEIVED_TOKEN');
 export const TOGGLE_MENU = Symbol('TOGGLE_MENU');
 
@@ -28,6 +29,13 @@ export function chartFocus(chart) {
 	}
 }
 
+export function exportFileFormatSelected(fileFormat) {
+	return {
+		type: EXPORT_FILE_FORMAT_SELECTED,
+		fileFormat
+	}
+}
+
 export function flushImportedData() {
 	return {
 		type: FLUSH_IMPORTED_DATA
@@ -42,7 +50,6 @@ export function fileImported(csvJson) {
 }
 
 export function toggleMenu(toggle) {
-	debugger;
 	return {
 		type: TOGGLE_MENU,
 		toggle
@@ -52,6 +59,7 @@ export function toggleMenu(toggle) {
 export default {
 	addPerson,
 	changeLang,
+	exportFileFormatSelected,
 	fileImported,
 	toggleMenu
 };

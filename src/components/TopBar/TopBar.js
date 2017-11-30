@@ -15,7 +15,7 @@ let languageOptions = [
 class TopBar extends Component {
 	render(props) {
 		return(
-			<div className='menu-bar'>
+			<div className='top-bar'>
 				<NavLink to='' exact className='logo' alttext='logo'><img src={logo} alt='logo' /></NavLink>
 				<ResponsiveMenu />
 			</div>

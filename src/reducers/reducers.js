@@ -7,6 +7,7 @@ import {
 	ADD_PERSON,
 	CHANGE_LANG,
 	CHART_FOCUS,
+	EXPORT_FILE_FORMAT_SELECTED,
 	FILE_IMPORTED,
 	FLUSH_IMPORTED_DATA,
 	RECEIVED_TOKEN,
@@ -77,7 +78,7 @@ export function chart(state = mockChart, action) {
 		default:
 			return state;
 	}
-} 
+}
 
 export function charts(state = [], action) {
 	/**
@@ -96,6 +97,16 @@ export function charts(state = [], action) {
 	}
 }
 
+export function exportfile(state = {}, action) {
+	switch (action.type) {
+		case EXPORT_FILE_FORMAT_SELECTED:
+			return {
+				...state.exportFile,
+				fileFormat: action.fileFormat
+			}
+	}
+}
+
 export function importedData(state = [], action) {
 	switch (action.type) {
 		case FILE_IMPORTED:
@@ -111,7 +122,7 @@ export function toggleMenu(state = false, action) {
 
 	switch(action.type) {
 		case TOGGLE_MENU:
-			return !state;
+			return (action.toggle) ? action.toggle : !state;
 		default:
 			return state;
 	}

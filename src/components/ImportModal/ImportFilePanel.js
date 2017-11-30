@@ -12,17 +12,17 @@ import CSVTemplate from '../../assets/Peopletrees_Template.csv';
 const ImportedDataHeader = (props) => (
 	<tr>
 		{props.data.map((cell, index) => {
-			return <th key={index}>{cell}</th>
+			return <div key={index}>{cell}</div>
 		})}
 	</tr>
 );
 
 const ImportedDataRow = (props) => (
-	<tr>
+	<div className='row'>
 		{props.data.map((cell, index) => {
-			return <td key={index}>{cell}</td>
+			return <div key={index}>{cell}</div>
 		})}
-	</tr>
+	</div>
 );
 
 const ImportFilePanel = ({ importedData, onFile_Selected}) => (
@@ -37,8 +37,7 @@ const ImportFilePanel = ({ importedData, onFile_Selected}) => (
 					{LocalizedText.HYPHEN_OR_HYPHEN}<br />
 					{LocalizedText.DRAG_AND_DROP_A_FILE_TO_IMPORT}
 			</label>
-			<a className='button csv-template' href={CSVTemplate} target='_blank'>{LocalizedText.CSV_TEMPLATE}</a>
-			
+			<a className='button csv-template' href={CSVTemplate} download='Peopletrees_Template.csv' target='_blank'>{LocalizedText.CSV_TEMPLATE}</a>
 			<input
 				id='fileSelector'
 				name='fileSelector'
@@ -46,29 +45,21 @@ const ImportFilePanel = ({ importedData, onFile_Selected}) => (
 				className='file-selector'
 				onChange={onFile_Selected} />
 		</div>
-		<div className='blurb'>
-			<p>{LocalizedText.MODAL_IMPORT_BLURB}</p>
-		</div>
 		{ importedData.length <= 1 ? null : (
 			<div className='imported-data-container'>
 				Records Imported: {importedData.length - 1}
-
-				<table cellSpacing='0'>
-					<thead>
-						<ImportedDataHeader data={importedData[0]} />
-					</thead>
-					<tbody>
-					{importedData.slice(1).map((datarow, rowkey) => {
+				<div className='imported-data-table'>
+				<ImportedDataRow data={importedData[0]} className='header' />
+				{importedData.slice(1).map((datarow, rowkey) => {
 						return <ImportedDataRow key={rowkey} data={datarow} />
 					})}
-					</tbody>
-				</table>
+				</div>
 			</div>
 		)}
 	</div>
 );
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
 
   return {
   	importedData: state.importedData

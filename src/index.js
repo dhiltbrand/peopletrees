@@ -13,15 +13,6 @@ import App from './App';
 import AppHistory from './AppHistory';
 import PeopletreesStore from './PeopletreesStore';
 
-function getUserLanguage() {
-
-};
-
-function getUserSettings() {
-
-};
-
-
 //Promise polyfill for older browsers
 if (!window.Promise) {
   window.Promise = Promise;
@@ -30,7 +21,7 @@ if (!window.Promise) {
 ReactDOM.render(
 	<Provider store={PeopletreesStore}>
 		<ConnectedRouter history={AppHistory}>
-			<Route path='' render={()=><App />} />
+			<App />
 		</ConnectedRouter>
 	</Provider>,
 	document.getElementById('root')
