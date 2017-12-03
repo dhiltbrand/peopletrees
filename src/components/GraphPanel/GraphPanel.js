@@ -4,21 +4,23 @@ import PropTypes from 'prop-types';
 
 import Graph from './Graph';
 import GraphTools from './GraphTools';
-import LocalizedText from '../../assets/LocalizedText';
 import Utils from '../../Utils';
-
 
 class GraphPanel extends React.Component {
 	constructor(props) {
 		super(props);
 		
+		this.datauid = 'kjdflkdsjflkdsjfds';
+		this.viewportWidth = Utils.getViewportWidth();
+		this.viewportHeight = Utils.getViewportHeight();
 	}
 
-//<Graph data={this.props.chart} />
 	render() {
+
+
 		return (
-			<div className='graph-panel panel'>
-				
+			<div className='graph-panel panel' data-uid={this.datauid}>
+				<Graph data={this.props.chart} height={this.viewportHeight} parentuid={this.datauid} width={this.viewportWidth} />
 				<GraphTools onClick={this.props.onaddPerson_Click} />
 			</div>
 		);

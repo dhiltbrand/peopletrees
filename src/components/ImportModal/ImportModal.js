@@ -17,23 +17,12 @@ let viewportWidth = Utils.getViewportWidth();
 
 let desiredWidth = (viewportWidth < 580) ? viewportWidth : 580;
 
-const customStyles = {
-  content : {
-  	left: '0',
-  	leftMargin: 'auto',
-  	rightMargin: 'auto',
-  	right: '0',
-  	width: desiredWidth + 'px'
-  }
-};
-
 const ImportModal = ({ importedData, lang, onForm_Submit, onModal_Close }) => (
 	<Modal
 		isOpen={true}
 		onRequestClose={onModal_Close}
 		closeTimeoutMS={closeTimeout}
 		contentLabel={LocalizedText.IMPORT}
-		style={customStyles}
 		className={{
 			base: 'modal-content',
 			afterOpen: 'modal-content_after-open',

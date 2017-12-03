@@ -11,15 +11,7 @@ import Utils from '../../Utils';
 
 let closeTimeout = 0;
 
-let viewportWidth = Utils.getViewportWidth();
 
-let desiredWidth = (viewportWidth < 580) ? viewportWidth : 580;
-
-const customStyles = {
-	content : {
-		width: desiredWidth + 'px'
-	}
-};
 
 const ExportModalView = ({onFileFormat_Selected, onForm_Submit, onModal_Close}) => (
 	<Modal
@@ -28,7 +20,6 @@ const ExportModalView = ({onFileFormat_Selected, onForm_Submit, onModal_Close}) 
 		onRequestClose={onModal_Close}
 		closeTimeoutMS={closeTimeout}
 		contentLabel={LocalizedText.EXPORT}
-		style={customStyles}
 		className={{
 			base: 'modal-content',
 			afterOpen: 'modal-content_after-open',
@@ -40,8 +31,7 @@ const ExportModalView = ({onFileFormat_Selected, onForm_Submit, onModal_Close}) 
 			beforeClose: 'modal-overlay_before-close'
 		}}
 	>
-		<h1>{LocalizedText.EXPORT_THE_CHART}</h1>
-		<a href='#' className='icon-close' onClick={onModal_Close} />
+		<h1>{LocalizedText.EXPORT_YOUR_CHART} <a href='#' className='icon-close' onClick={onModal_Close} /></h1>
 		<div className='modal-body'>
 			<label htmlFor='fileTypeSelector'>{LocalizedText.FILE_TYPE}</label>
 			<select id='fileTypeSelector' name='fileTypeSelector' onChange={onFileFormat_Selected}>

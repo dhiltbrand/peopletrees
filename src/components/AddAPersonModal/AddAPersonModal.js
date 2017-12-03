@@ -10,20 +10,6 @@ import Utils from '../../Utils';
 
 let closeTimeout = 0;
 
-let viewportWidth = Utils.getViewportWidth();
-
-let desiredWidth = (viewportWidth < 580) ? viewportWidth : 580;
-
-const customStyles = {
-  content : {
-  	right: '0',
-  	left: '0',
-  	marginLeft: 'auto',
-  	marginRight: 'auto',
-  	width: desiredWidth + 'px'
-  }
-};
-
 const AddAPersonModal = ({onForm_Submit, onModal_Close}) => (
 	<Modal
 		isOpen={true}
@@ -31,7 +17,6 @@ const AddAPersonModal = ({onForm_Submit, onModal_Close}) => (
 		onRequestClose={onModal_Close}
 		closeTimeoutMS={closeTimeout}
 		contentLabel={LocalizedText.ADD_A_PERSON}
-		style={customStyles}
 		className={{
 			base: 'modal-content',
 			afterOpen: 'modal-content-after-open',

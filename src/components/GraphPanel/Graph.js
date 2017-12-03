@@ -10,7 +10,10 @@ class Graph extends React.Component {
 	constructor (props) {
 		super(props);
 
+		this.BEZIER_CONTROL_POINT = 0.552284749831;
+
 		this.data = this.props.data;
+		this.datauid = 'kljdlfkdsj';
 
 		this.scale = 1;
 		
@@ -21,17 +24,13 @@ class Graph extends React.Component {
 			nodeFont: 'Arial',
 			nodeFontSize: '16px'
 		};
-
-		this.viewPortWidth = Utils.getViewportWidth();
-		this.viewPortHeight = Utils.getViewportHeight();
 	}
 
 	componentDidMount() {
-		this.parentContainer = 
-		this.canvas = document.querySelector(this.props.identifier);
-		this.boundingWidth = this.getBoundingClientRect();
-		this.context = this.canvas.getContext('2d');
-		this.drawGraph(this.context);
+
+		//this.viewportWidth = 
+		//this.context = this.canvas.getContext('2d');
+		//this.drawGraph(this.context);
 	}
 
 	drawGraph(context) {
@@ -88,9 +87,11 @@ class Graph extends React.Component {
 
 	render () {
 		return (
-			<canvas className='graph' height={Utils.getViewportHeight() - 65} width={Utils.getViewportWidth()}></canvas>
+			<svg className='graph' data-uid={this.datauid} height={this.props.height} width={this.props.width} xmlns="http://www.w3.org/2000/svg">
+			</svg>
 		)
 	}
+	//<canvas className='graph' height={Utils.getViewportHeight() - 65} width={Utils.getViewportWidth()}></canvas>
 };
 
 export default Graph;

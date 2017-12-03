@@ -31,7 +31,7 @@ class App extends Component {
         <Route path='/export' render={()=><ExportModal />} />
         <Route path='/import' render={()=><ImportModal />} />
         <Route path='/feedback' render={()=><FeedbackModal />} />
-        <Route path='' exact render={()=><WelcomePanel />} />
+        <Route path='/' exact render={()=><WelcomePanel />} />
         <Route path='/graph' render={()=><GraphPanel />} />
       </div>
     );

@@ -1,0 +1,77 @@
+<svg width='160' height='100' xmlns='http://www.w3.org/2000/svg' class='anim-chart-organize'>
+	<style>
+		
+		.circle-fifth {
+			animation: circle-fifth-shift 20s ease infinite;
+		}
+
+		.circle-fourth {
+			animation: circle-fourth-shift 20s ease-in-out infinite;
+		}
+
+		.circle-first {
+			animation: circle-first-shift 20s ease-in-out infinite;
+		}
+
+		.circle-root {
+			animation: circle-root-shift 20s ease-in-out infinite;
+		}
+
+		.circle-second {
+			animation: circle-second-shift 20s ease-in-out infinite;
+		}
+
+		.circle-third {
+			animation: circle-third-shift 20s ease-in-out infinite;
+		}
+
+		@keyframes circle-fifth-shift {
+			0% {transform: translate(0, 0)}
+			15% {transform: translate(32px, 48px)}
+			85% {transform: translate(32px, 48px)}
+			100% {transform: translate(0px, 0)}
+		}
+
+		@keyframes circle-fourth-shift {
+			0% {transform: translate(0, 0)}
+			30% {transform: translate(48px, 16px)}
+			67% {transform: translate(48px, 16px)}
+			100% {transform: translate(0, 0)}
+		}
+
+		@keyframes circle-first-shift {
+			0% {transform: translate(24px, 0)}
+			15% {transform: translate(32px, 24px)}
+			80% {transform: translate(32px, 24px)}
+			100% {transform: translate(24px, 0)}
+		}
+
+		@keyframes circle-root-shift {
+			0% {transform: translateY(0)}
+			10% {transform: translateY(-72px)}
+			75% {transform: translateY(-72px)}
+			100% {transform: translateY(0)}
+		}
+
+		@keyframes circle-second-shift {
+			0% {transform: translate(0, 0)}
+			20% {transform: translate(-20px, 24px)}
+			75% {transform: translate(-20px, 24px)}
+			100% {transform: translate(0, 0)}
+		}
+
+		@keyframes circle-third-shift {
+			0% {transform: translate(0,0)}
+			15% {transform: translate(20px, 24px)}
+			90% {transform: translate(20px, 24px)}
+			100% {transform: translate(0, 0)}
+		}
+	</style>
+	
+	<circle class='circle-first' cx='24' cy='24' r='10' stroke='rgba(15, 173, 78, 1)' stroke-width='3' fill='Transparent' />
+	<circle class='circle-second' cx='136' cy='24' r='10' stroke='rgba(15, 173, 78, 1)' stroke-width='3' fill='Transparent' />
+	<circle class='circle-third' cx='16' cy='56' r='10' stroke='rgba(17, 73, 40, 1)' stroke-width='3' fill='Transparent' />
+	<circle class='circle-fourth' cx='48' cy='64' r='10' stroke='rgba(17, 73, 40, 1)' stroke-width='3' fill='Transparent' />
+	<circle class='circle-fifth' cx='104' cy='32' r='10' stroke='rgba(17, 73, 40, 1)' stroke-width='3' fill='Transparent' />
+	<circle class='circle-root' cx='80' cy='88' r='10' stroke='rgba(40, 121, 75, 1)' stroke-width='3' fill='Transparent' />
+</svg>
